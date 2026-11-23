@@ -30,8 +30,11 @@
 /* Reset ------------------------------------------------------------------ */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { overflow-x: clip; }
+
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -746,7 +749,12 @@ html.no-js .chip { opacity: 1; }
 .path-title {
   position: absolute;
   z-index: 1;
-  left: var(--x);
+  /* Aligned to the same container edge as the About and Skills labels,
+     not to a share of the full-bleed stage. */
+  left: 50%;
+  width: min(var(--container), 100% - var(--gutter) * 2);
+  transform: translateX(-50%);
+  padding-inline: var(--gutter);
   top: var(--y);
   margin: 0;
   font-size: clamp(34px, 4.6vw, 58px);
