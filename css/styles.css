@@ -117,7 +117,7 @@ ul { padding: 0; list-style: none; }
   text-align: center;
   /* No bottom padding: the gap to the intro is set on .intro below, so it
      scales with the viewport instead of being a fixed pull upward. */
-  padding-block: clamp(70px, 11vw, 148px) 0;
+  padding-block: clamp(34px, 5vw, 68px) 0;
 }
 .hero-title {
   font-size: clamp(38px, 6.4vw, 76px);
